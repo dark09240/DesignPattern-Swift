@@ -20,7 +20,10 @@ class ViewModel {
     private var userList: [User] = []
     
     func reloadData() {
-        DesignPatternFramework.requestUseList(completionHandler: {response in
+        let size: Int = .random(in: 5...20)
+        let urlString = "\(APIURL.random_user_data)?size=\(size)"
+        
+        APIService.request(with: [User].self, url: urlString, method: .get, completionHandler: {response in
             DispatchQueue.main.async {[weak self] in
                 self?.requestHandler(response)
             }

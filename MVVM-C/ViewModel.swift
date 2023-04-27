@@ -1,21 +1,17 @@
 //
-//  Presenter.swift
-//  MVP
+//  ViewModel.swift
+//  MVVM-C
 //
-//  Created by Dong on 2023/4/19.
+//  Created by Dong on 2023/4/26.
 //
 
 import Foundation
 import DesignPattern_Swift
 
-protocol PresenterDelegate: AnyObject {
-    func presenterReloadDataSuccess()
-    func presenterReloadDataFail(with message: String)
-}
-
-class Presenter {
+class ViewModel {
     
-    weak var delegate: PresenterDelegate?
+    var userListDidChange: ((ViewModel) -> Void)?
+    var requestDidFail: ((ViewModel, String) -> Void)?
     
     var numberOfUserList: Int {
         return userList.count
@@ -36,12 +32,12 @@ class Presenter {
     
     private func requestHandler(_ response: APIService.Response<[User]>) {
         if let error = response.error {
-            delegate?.presenterReloadDataFail(with: error.message)
+            requestDidFail?(self, error.message)
         }else if let data = response.data {
             userList = data
-            delegate?.presenterReloadDataSuccess()
+            userListDidChange?(self)
         }else {
-            delegate?.presenterReloadDataFail(with: "Failed to request.")
+            requestDidFail?(self, "Failed to request.")
         }
     }
     

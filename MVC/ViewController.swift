@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import DesignPattern_Swift
 
 class ViewController: UIViewController {
     //MARK: - Variables
@@ -29,7 +28,10 @@ class ViewController: UIViewController {
     //MARK: - Functions
     @objc private func reloadData() {
         tableView.isHidden = true
-        DesignPatternFramework.requestUseList(completionHandler: {response in
+        let size: Int = .random(in: 5...20)
+        let urlString = "\(APIURL.random_user_data)?size=\(size)"
+        
+        APIService.request(with: [User].self, url: urlString, method: .get, completionHandler: {response in
             DispatchQueue.main.async {[weak self] in
                 self?.requestHandler(response)
             }
