@@ -18,10 +18,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         reloadData()
     }
 
@@ -50,18 +46,14 @@ class ViewController: UIViewController {
         }
     }
     
-    private func showAlert(with message: String) {
-        let alert = UIAlertController(title: message, message: nil, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        present(alert, animated: true)
-    }
-    
     //MARK: - Setup Views
     private func setupViews() {
         let reloadBtn = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(reloadData))
         navigationItem.rightBarButtonItem = reloadBtn
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        tableView.dataSource = self
+        tableView.delegate = self
     }
 }
 
@@ -74,8 +66,19 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
         let user = userList[indexPath.row]
-        cell.textLabel?.text = user.last_name + " " + user.first_name
+        cell.textLabel?.text = user.username
         cell.separatorInset = .zero
         return cell
+    }
+}
+
+//MARK: - UITableView Delegate
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let index = indexPath.row
+        if index >= 0 && index < userList.count {
+            let vc = DetailVC(user: userList[index])
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }

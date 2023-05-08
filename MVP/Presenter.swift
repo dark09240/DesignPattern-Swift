@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import DesignPattern_Swift
 
 protocol PresenterDelegate: AnyObject {
     func presenterReloadDataSuccess()

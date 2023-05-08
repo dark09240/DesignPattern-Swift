@@ -19,10 +19,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         buildViewModel()
         setupViews()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         reloadData()
     }
     
@@ -38,6 +34,8 @@ class ViewController: UIViewController {
         navigationItem.rightBarButtonItem = reloadBtn
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        tableView.dataSource = self
+        tableView.delegate = self
     }
 }
 
@@ -52,9 +50,20 @@ extension ViewController: UITableViewDataSource {
         guard let user = viewModel.userAtIndex(indexPath.row) else {
             return cell
         }
-        cell.textLabel?.text = user.last_name + " " + user.first_name
+        cell.textLabel?.text = user.username
         cell.separatorInset = .zero
         return cell
+    }
+}
+
+//MARK: - UITableView Delegate
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let user = viewModel.userAtIndex(indexPath.row) else {
+            return
+        }
+        let vc = DetailVC(user: user)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -64,6 +73,10 @@ extension ViewController {
         viewModel.userListDidChange = {[weak self] _ in
             self?.tableView.reloadData()
             self?.tableView.isHidden = false
+        }
+        
+        viewModel.requestDidFail = {[weak self] _, message in
+            self?.showAlert(with: message)
         }
     }
 }

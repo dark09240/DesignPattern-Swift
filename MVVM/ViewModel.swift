@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import DesignPattern_Swift
 
 class ViewModel {
     

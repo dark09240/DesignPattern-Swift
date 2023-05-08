@@ -20,9 +20,18 @@ class AppCoordinator: Coordinator {
     
     //MARK: - Functions
     func start() {
-        let viewModel = ViewModel()
+        let viewModel = ViewModel(navigator: self)
         vc = ViewController(viewModel: viewModel)
-        window.rootViewController = vc
+        let nc = UINavigationController(rootViewController: vc!)
+        window.rootViewController = nc
         window.makeKeyAndVisible()
+    }
+}
+
+//MARK: - Navigator
+extension AppCoordinator: Navigator {
+    func pushToDetail(with user: User) {
+        let detailVC = DetailVC(user: user)
+        vc?.navigationController?.pushViewController(detailVC, animated: true)
     }
 }

@@ -19,10 +19,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         presenter.delegate = self
         setupViews()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         reloadData()
     }
     
@@ -38,6 +34,8 @@ class ViewController: UIViewController {
         navigationItem.rightBarButtonItem = reloadBtn
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        tableView.dataSource = self
+        tableView.delegate = self
     }
 }
 
@@ -52,9 +50,20 @@ extension ViewController: UITableViewDataSource {
         guard let user = presenter.userAtIndex(indexPath.row) else {
             return cell
         }
-        cell.textLabel?.text = user.last_name + " " + user.first_name
+        cell.textLabel?.text = user.username
         cell.separatorInset = .zero
         return cell
+    }
+}
+
+//MARK: - UITableView Delegate
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let user = presenter.userAtIndex(indexPath.row) else {
+            return
+        }
+        let vc = DetailVC(user: user)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -66,8 +75,6 @@ extension ViewController: PresenterDelegate {
     }
     
     func presenterReloadDataFail(with message: String) {
-        let alert = UIAlertController(title: message, message: nil, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        present(alert, animated: true)
+        showAlert(with: message)
     }
 }

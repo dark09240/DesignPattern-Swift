@@ -68,6 +68,19 @@
 		F5B0382729F0E03900344742 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5B0382629F0E03900344742 /* Assets.xcassets */; };
 		F5B0382A29F0E03900344742 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5B0382829F0E03900344742 /* LaunchScreen.storyboard */; };
 		F5B0383029F0E07E00344742 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B0382F29F0E07E00344742 /* ViewModel.swift */; };
+		F5C729AE2A08F461001AF2A0 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C729AC2A08F461001AF2A0 /* DetailVC.swift */; };
+		F5C729AF2A08F461001AF2A0 /* DetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5C729AD2A08F461001AF2A0 /* DetailVC.xib */; };
+		F5C729B02A08FA54001AF2A0 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C729AC2A08F461001AF2A0 /* DetailVC.swift */; };
+		F5C729B12A08FA54001AF2A0 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C729AC2A08F461001AF2A0 /* DetailVC.swift */; };
+		F5C729B22A08FA55001AF2A0 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C729AC2A08F461001AF2A0 /* DetailVC.swift */; };
+		F5C729B32A08FA5B001AF2A0 /* DetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5C729AD2A08F461001AF2A0 /* DetailVC.xib */; };
+		F5C729B42A08FA5B001AF2A0 /* DetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5C729AD2A08F461001AF2A0 /* DetailVC.xib */; };
+		F5C729B52A08FA5C001AF2A0 /* DetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5C729AD2A08F461001AF2A0 /* DetailVC.xib */; };
+		F5C729B82A08FC55001AF2A0 /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C729B72A08FC55001AF2A0 /* Extension+UIViewController.swift */; };
+		F5C729B92A08FC59001AF2A0 /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C729B72A08FC55001AF2A0 /* Extension+UIViewController.swift */; };
+		F5C729BA2A08FC59001AF2A0 /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C729B72A08FC55001AF2A0 /* Extension+UIViewController.swift */; };
+		F5C729BB2A08FC5A001AF2A0 /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C729B72A08FC55001AF2A0 /* Extension+UIViewController.swift */; };
+		F5C729BE2A08FD96001AF2A0 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C729BD2A08FD96001AF2A0 /* Navigator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -126,6 +139,10 @@
 		F5B0382929F0E03900344742 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F5B0382B29F0E03900344742 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5B0382F29F0E07E00344742 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		F5C729AC2A08F461001AF2A0 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		F5C729AD2A08F461001AF2A0 /* DetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailVC.xib; sourceTree = "<group>"; };
+		F5C729B72A08FC55001AF2A0 /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
+		F5C729BD2A08FD96001AF2A0 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +182,7 @@
 			children = (
 				F546A03129F92CD000EEF631 /* AppDelegate.swift */,
 				F546A04D29F9FF4500EEF631 /* Coordinator */,
+				F5C729BD2A08FD96001AF2A0 /* Navigator.swift */,
 				F546A04329F92D2300EEF631 /* ViewModel.swift */,
 				F546A04929F9FF3D00EEF631 /* ViewController.swift */,
 				F546A04A29F9FF3D00EEF631 /* ViewController.xib */,
@@ -211,7 +229,7 @@
 		F5B037B429F0D8BD00344742 = {
 			isa = PBXGroup;
 			children = (
-				F546A05A29FA643F00EEF631 /* Network */,
+				F5C729AA2A08F447001AF2A0 /* Common */,
 				F5B037CD29F0D97100344742 /* MVC */,
 				F5B0380229F0DF4500344742 /* MVP */,
 				F5B0381C29F0E03800344742 /* MVVM */,
@@ -286,6 +304,41 @@
 				F5B0382B29F0E03900344742 /* Info.plist */,
 			);
 			path = MVVM;
+			sourceTree = "<group>";
+		};
+		F5C729AA2A08F447001AF2A0 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F546A05A29FA643F00EEF631 /* Network */,
+				F5C729B62A08FC46001AF2A0 /* Extensions */,
+				F5C729BC2A08FCA0001AF2A0 /* Modules */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		F5C729AB2A08F44E001AF2A0 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				F5C729AC2A08F461001AF2A0 /* DetailVC.swift */,
+				F5C729AD2A08F461001AF2A0 /* DetailVC.xib */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		F5C729B62A08FC46001AF2A0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F5C729B72A08FC55001AF2A0 /* Extension+UIViewController.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F5C729BC2A08FCA0001AF2A0 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				F5C729AB2A08F44E001AF2A0 /* Detail */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -411,6 +464,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F546A03E29F92CD100EEF631 /* LaunchScreen.storyboard in Resources */,
+				F5C729B52A08FA5C001AF2A0 /* DetailVC.xib in Resources */,
 				F546A04C29F9FF3D00EEF631 /* ViewController.xib in Resources */,
 				F546A03B29F92CD100EEF631 /* Assets.xcassets in Resources */,
 			);
@@ -421,6 +475,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5B037DB29F0D97200344742 /* LaunchScreen.storyboard in Resources */,
+				F5C729AF2A08F461001AF2A0 /* DetailVC.xib in Resources */,
 				F5B037D829F0D97200344742 /* Assets.xcassets in Resources */,
 				F5B037D629F0D97100344742 /* Main.storyboard in Resources */,
 			);
@@ -431,6 +486,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5B0381029F0DF4600344742 /* LaunchScreen.storyboard in Resources */,
+				F5C729B32A08FA5B001AF2A0 /* DetailVC.xib in Resources */,
 				F5B0380D29F0DF4600344742 /* Assets.xcassets in Resources */,
 				F5B0380B29F0DF4500344742 /* Main.storyboard in Resources */,
 			);
@@ -441,6 +497,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5B0382A29F0E03900344742 /* LaunchScreen.storyboard in Resources */,
+				F5C729B42A08FA5B001AF2A0 /* DetailVC.xib in Resources */,
 				F5B0382729F0E03900344742 /* Assets.xcassets in Resources */,
 				F5B0382529F0E03800344742 /* Main.storyboard in Resources */,
 			);
@@ -453,11 +510,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5C729BB2A08FC5A001AF2A0 /* Extension+UIViewController.swift in Sources */,
+				F5C729BE2A08FD96001AF2A0 /* Navigator.swift in Sources */,
 				F546A07F29FA65A400EEF631 /* User.swift in Sources */,
 				F546A08029FA65A400EEF631 /* Employment.swift in Sources */,
 				F546A04B29F9FF3D00EEF631 /* ViewController.swift in Sources */,
 				F546A07B29FA65A400EEF631 /* APIURL.swift in Sources */,
 				F546A04629F92D7800EEF631 /* Coordinator.swift in Sources */,
+				F5C729B22A08FA55001AF2A0 /* DetailVC.swift in Sources */,
 				F546A07929FA65A400EEF631 /* CreditCard.swift in Sources */,
 				F546A07C29FA65A400EEF631 /* Subscription.swift in Sources */,
 				F546A07E29FA65A400EEF631 /* APIError.swift in Sources */,
@@ -479,8 +539,10 @@
 				F546A05B29FA647400EEF631 /* Subscription.swift in Sources */,
 				F546A06129FA647400EEF631 /* Employment.swift in Sources */,
 				F546A05E29FA647400EEF631 /* Coordinates.swift in Sources */,
+				F5C729AE2A08F461001AF2A0 /* DetailVC.swift in Sources */,
 				F546A06429FA647400EEF631 /* Address.swift in Sources */,
 				F5B037D329F0D97100344742 /* ViewController.swift in Sources */,
+				F5C729B82A08FC55001AF2A0 /* Extension+UIViewController.swift in Sources */,
 				F546A06029FA647400EEF631 /* APIError.swift in Sources */,
 				F5B037CF29F0D97100344742 /* AppDelegate.swift in Sources */,
 				F546A06229FA647400EEF631 /* User.swift in Sources */,
@@ -494,11 +556,13 @@
 			files = (
 				F546A06B29FA65A300EEF631 /* Address.swift in Sources */,
 				F5B0381629F0DF8B00344742 /* Presenter.swift in Sources */,
+				F5C729B02A08FA54001AF2A0 /* DetailVC.swift in Sources */,
 				F546A06729FA65A300EEF631 /* CreditCard.swift in Sources */,
 				F546A06C29FA65A300EEF631 /* APIError.swift in Sources */,
 				F546A06A29FA65A300EEF631 /* Subscription.swift in Sources */,
 				F5B0380829F0DF4500344742 /* ViewController.swift in Sources */,
 				F546A06829FA65A300EEF631 /* Coordinates.swift in Sources */,
+				F5C729B92A08FC59001AF2A0 /* Extension+UIViewController.swift in Sources */,
 				F546A06629FA65A300EEF631 /* APIService.swift in Sources */,
 				F5B0380429F0DF4500344742 /* AppDelegate.swift in Sources */,
 				F546A06E29FA65A300EEF631 /* Employment.swift in Sources */,
@@ -513,11 +577,13 @@
 			files = (
 				F546A07429FA65A400EEF631 /* Address.swift in Sources */,
 				F5B0382229F0E03800344742 /* ViewController.swift in Sources */,
+				F5C729B12A08FA54001AF2A0 /* DetailVC.swift in Sources */,
 				F546A07029FA65A400EEF631 /* CreditCard.swift in Sources */,
 				F546A07529FA65A400EEF631 /* APIError.swift in Sources */,
 				F546A07329FA65A400EEF631 /* Subscription.swift in Sources */,
 				F5B0383029F0E07E00344742 /* ViewModel.swift in Sources */,
 				F546A07129FA65A400EEF631 /* Coordinates.swift in Sources */,
+				F5C729BA2A08FC59001AF2A0 /* Extension+UIViewController.swift in Sources */,
 				F546A06F29FA65A400EEF631 /* APIService.swift in Sources */,
 				F5B0381E29F0E03800344742 /* AppDelegate.swift in Sources */,
 				F546A07729FA65A400EEF631 /* Employment.swift in Sources */,
