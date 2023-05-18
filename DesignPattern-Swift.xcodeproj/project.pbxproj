@@ -180,15 +180,10 @@
 		F546A03029F92CD000EEF631 /* MVVM-C */ = {
 			isa = PBXGroup;
 			children = (
-				F546A03129F92CD000EEF631 /* AppDelegate.swift */,
+				F5AACF462A15F619003A4973 /* Applocation */,
 				F546A04D29F9FF4500EEF631 /* Coordinator */,
-				F5C729BD2A08FD96001AF2A0 /* Navigator.swift */,
-				F546A04329F92D2300EEF631 /* ViewModel.swift */,
-				F546A04929F9FF3D00EEF631 /* ViewController.swift */,
-				F546A04A29F9FF3D00EEF631 /* ViewController.xib */,
-				F546A03A29F92CD100EEF631 /* Assets.xcassets */,
-				F546A03C29F92CD100EEF631 /* LaunchScreen.storyboard */,
-				F546A03F29F92CD100EEF631 /* Info.plist */,
+				F5AACF442A15F5E6003A4973 /* Modules */,
+				F5AACF472A15F62F003A4973 /* Resources */,
 			);
 			path = "MVVM-C";
 			sourceTree = "<group>";
@@ -224,6 +219,43 @@
 				F5B037EA29F0D9E200344742 /* Subscription.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		F5AACF442A15F5E6003A4973 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				F5AACF452A15F5F2003A4973 /* ViewController */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		F5AACF452A15F5F2003A4973 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F5C729BD2A08FD96001AF2A0 /* Navigator.swift */,
+				F546A04329F92D2300EEF631 /* ViewModel.swift */,
+				F546A04929F9FF3D00EEF631 /* ViewController.swift */,
+				F546A04A29F9FF3D00EEF631 /* ViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		F5AACF462A15F619003A4973 /* Applocation */ = {
+			isa = PBXGroup;
+			children = (
+				F546A03129F92CD000EEF631 /* AppDelegate.swift */,
+			);
+			path = Applocation;
+			sourceTree = "<group>";
+		};
+		F5AACF472A15F62F003A4973 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F546A03A29F92CD100EEF631 /* Assets.xcassets */,
+				F546A03C29F92CD100EEF631 /* LaunchScreen.storyboard */,
+				F546A03F29F92CD100EEF631 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		F5B037B429F0D8BD00344742 = {
